@@ -15,4 +15,4 @@ create table addresses
 alter table addresses
     owner to postgres;
 
-INSERT INTO public.addresses (id, contract_id, city, street, house, apartment) VALUES (1, 1, 'Дубна', 'Университетская', '19/1', 124);
+INSERT INTO public.addresses (id, contract_id, city, street, house, apartment) VALUES (1, 1, 'Дубна', 'Боголюбова', '1А', 11);

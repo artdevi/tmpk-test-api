@@ -12,4 +12,4 @@ create table contracts
 alter table contracts
     owner to postgres;
 
-INSERT INTO public.contracts (id, name, balance, is_legal_entity, is_active) VALUES (1, 'Тохталиев Анис Ринатович', 0, true, true);
+INSERT INTO public.contracts (id, name, balance, is_legal_entity, is_active) VALUES (1, 'Иванов Иван Иванович', 0, true, true);
