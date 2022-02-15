@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form class="input-form">
+    <form action="" class="input-form" method="GET">
         <h4>Введите номер договора для получения необходимой информации</h4>
-        <input type="number" id="contract-num-input" placeholder="Номер договора">
+        <input type="number" id="contract-num-input" required="true" placeholder="Номер договора">
         <button type="button" class="get-info-button">ОК</button>
     </form>
     <div id="errors-container">
