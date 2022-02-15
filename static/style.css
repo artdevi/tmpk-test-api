@@ -1,0 +1,51 @@
+body{
+	font-family: sans-serif;
+}
+
+table {
+	border-collapse: separate;
+    margin-top: 25px;
+    border-radius: 5px;
+    border-spacing: 1px 1px;
+}
+
+td, th {
+    padding:12px 15px;
+    border:1px solid #ddd;
+    text-align: center;
+    font-size:16px;
+    border-radius: 5px;
+}
+
+th {
+	background-color: #4CAF50;
+	color:#ffffff;
+}
+
+input {
+    padding: 5px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.error {
+    color: darkred;
+}
+
+
+
+
+
+
