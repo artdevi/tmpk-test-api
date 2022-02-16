@@ -45,7 +45,8 @@ def get_balance(id, date):
     - ((SELECT COALESCE(SUM(date_part('month', age(end_date, start_date)) * price), 0) FROM tariffs
             WHERE contract_id = {id} AND end_date is not NULL AND end_date <= '{date}')
         + (SELECT COALESCE(SUM(date_part('month', age('{date}', start_date)) * price), 0) FROM tariffs
-            WHERE contract_id = {id} AND  end_date is NULL OR end_date > '{date}'));""")
+            WHERE (contract_id = {id} AND  end_date IS NULL AND start_date < '{date}') 
+            OR (end_date > '{date}' AND contract_id = {id} AND start_date <= '{date}')));""")
 
     balance = cursor.fetchone()
     print(balance)
