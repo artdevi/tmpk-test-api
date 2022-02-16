@@ -41,10 +41,10 @@ def get_balance(id, date):
         return 'Contract ID not found', 400
 
     cursor.execute(f"""SELECT
-    (SELECT SUM(sum) FROM transactions WHERE contract_id = 1 AND datetime <= '{date}'::date)
-    - ((SELECT date_part('month', age(end_date, start_date)) * price FROM tariffs
+    (SELECT COALESCE(SUM(sum), 0) FROM transactions WHERE contract_id = {id} AND datetime <= '{date}')
+    - ((SELECT COALESCE(SUM(date_part('month', age(end_date, start_date)) * price), 0) FROM tariffs
             WHERE contract_id = {id} AND end_date is not NULL AND end_date <= '{date}')
-        + (SELECT date_part('month', age('{date}', start_date)) * price FROM tariffs
+        + (SELECT COALESCE(SUM(date_part('month', age('{date}', start_date)) * price), 0) FROM tariffs
             WHERE contract_id = {id} AND  end_date is NULL OR end_date > '{date}'));""")
 
     balance = cursor.fetchone()
